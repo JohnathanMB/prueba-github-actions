@@ -1,4 +1,5 @@
 name: Prueba de GitHub Actions
+run-name: Primer workflow de prueba - PUSH
 on: [push]
 jobs:
   setup-java:
