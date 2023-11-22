@@ -1,0 +1,10 @@
+name: Trigger-Schedule Test
+on:
+  schedule:
+    - cron: '0 17 22 11 WED'
+jobs:
+  do-alert:
+    runs-on: ubuntu-talest
+    steps:
+      - name: Create Alert
+        uses: echo "Esta es la alerta creada para identificar el scheduler"
