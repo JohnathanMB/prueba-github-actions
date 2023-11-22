@@ -1,5 +1,5 @@
-name: Trigger-Schedule Test
-run-name: Trigger-Schedule Test
+name: Trigger SCHEDULE Test
+run-name: Trigger SCHEDULE Test
 on:
   schedule:
     - cron: '0/2 * * * *'

@@ -1,5 +1,5 @@
-name: Trigger Pull Request Test
-run-name: Trigger Pull Request Test
+name: Trigger PULL REQUEST Test
+run-name: Trigger PULL REQUEST Test
 on:
   pull_request:
     types:

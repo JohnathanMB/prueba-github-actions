@@ -1,15 +1,16 @@
-name: Trigger WORKFLOW-DISPATCHER
+name: Trigger WORKFLOW-DISPATCHER Test
+run-name: Trigger WORKFLOW-DISPATCHER Test
 on:
   workflow_dispatch:
     inputs:
       alerta:
         description: 'nivel'
         required: true
-        default: medio
+        default: 'medio'
         type: choice
         options:
-          - bajo
-          - medio
+        - bajo
+        - medio
 jobs:
   do-alert:
     runs-on: ubuntu-latest
