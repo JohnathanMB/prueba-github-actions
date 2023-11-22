@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-talest
     steps:
       - name: Create Alert
-        uses: echo "Esta es la alerta creada para identificar el scheduler"
+        run: echo "Esta es la alerta creada para identificar el scheduler"
