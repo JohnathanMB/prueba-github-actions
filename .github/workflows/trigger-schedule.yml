@@ -5,7 +5,7 @@ on:
     - cron: '5 * 22 11 WED'
 jobs:
   do-alert:
-    runs-on: ubuntu-talest
+    runs-on: ubuntu-latest
     steps:
       - name: Create Alert
         run: echo "Esta es la alerta creada para identificar el scheduler"
