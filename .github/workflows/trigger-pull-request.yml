@@ -6,8 +6,6 @@ on:
       - opened
       - labeled
       - synchronize
-    branches:
-      - 'release/**'
 jobs:
   do-alert:
     runs-on: ubuntu-latest
