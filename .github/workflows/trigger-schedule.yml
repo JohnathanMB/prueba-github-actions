@@ -2,7 +2,7 @@ name: Trigger SCHEDULE Test
 run-name: Trigger SCHEDULE Test
 on:
   schedule:
-    - cron: '0/2 * * * *'
+    - cron: '15 12 20 11 *'
 jobs:
   do-alert:
     runs-on: ubuntu-latest
