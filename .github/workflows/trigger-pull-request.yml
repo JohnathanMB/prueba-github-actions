@@ -1,0 +1,17 @@
+name: Trigger Pull Request Test
+run-name: Trigger Pull Request Test
+on:
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - synchronize
+    branches:
+      - 'release/**'
+jobs:
+  do-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Alert - PR
+        run: echo "Esta es la alerta creada para identificar el PR"
+
