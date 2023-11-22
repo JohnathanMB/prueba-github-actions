@@ -17,5 +17,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Compile and run Java Code
         run: |
-          javac Entrada.java
-          java Entrada
+          javac ./src/Main.java
+          java ./src/Main.java
