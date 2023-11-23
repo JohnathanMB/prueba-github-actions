@@ -1,0 +1,38 @@
+name: expresiones
+run-name: Ejemplo de EXPRESIONES
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: 'Tu Nombre'
+        required: true
+        type: string
+      rol:
+        description: 'Tu Rol'
+        required: true
+        default: 'NA'
+        type: choice
+        options:
+          - User
+          - Client
+          - Admin
+      pass-code:
+        description: 'Pass Code'
+        required: true
+        type: string
+jobs:
+  do-user-client-function:
+    if: ${{ inputs.nombre == 'User' || inputs.nombre == 'Client' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Función para Users y Clients
+        run: echo "Lo sentimos ${{inputs.nombre}}, no tienes función definida"
+
+  do-admin-function:
+    if: ${{ inputs.nombre == 'Admin' && input.pass-code == '123' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Función para Admins
+        run: echo "Bienvenido ${{inputs.nombre}}, por favor acceda a la sala de control"
+      - name: Sonidos de hacker
+        run: echo "pffff tsss tac tac tac BIENVENIDO"
