@@ -32,14 +32,14 @@ jobs:
         run: echo "PASS = ${{ inputs.pass-code }}"
   do-user-client-function:
     needs: get-inputs
-    if: ${{ inputs.nombre == 'User' || inputs.nombre == 'Client' }}
+    if: ${{ inputs.nombre == User}} || {{inputs.nombre == 'Client' }}
     runs-on: ubuntu-latest
     steps:
       - name: Función para Users y Clients
         run: echo "Lo sentimos ${{inputs.nombre}}, no tienes función definida"
   do-admin-function:
     needs: get-inputs
-    if: ${{ inputs.nombre == 'Admin' && inputs.pass-code == '123' }}
+    if: ${{ inputs.nombre == Admin && inputs.pass-code == 123 }}
     runs-on: ubuntu-latest
     steps:
       - name: Función para Admins
