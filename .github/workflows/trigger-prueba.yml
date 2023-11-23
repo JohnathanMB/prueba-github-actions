@@ -1,0 +1,19 @@
+name: Trigger WORKFLOW-DISPATCHER Test
+run-name: Trigger WORKFLOW-DISPATCHER Test
+on:
+  workflow_dispatch:
+    inputs:
+      alerta:
+        description: 'nivel'
+        required: true
+        default: medio
+        type: choice
+        options:
+          - bajo
+          - medio
+jobs:
+  do-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Alert - DISPATCH
+        run: echo "Esta es la alerta creada para identificar el DISPATCH"
