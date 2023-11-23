@@ -27,7 +27,7 @@ on:
         default: Juan
         type: string
   schedule:
-    - cron:  '15 22 * * *'
+    - cron:  '15 22 11 11 *'
 jobs:
   hola-mundo-manual:
     runs-on: ubuntu-latest
