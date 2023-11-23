@@ -8,20 +8,34 @@ on:
       - synchronize
   workflow_dispatch:
     inputs:
-      alerta:
-        description: 'nivel'
+      lenguaje_favorito:
+        description: 'Lenguaje favorito'
+        default: Python
         required: true
-        default: medio
         type: choice
         options:
-          - bajo
-          - medio
+          - Python
+          - JavaScript
+          - Go
+      nombre:
+        description: 'Tu nombre'
+        required: true
+        default: Juan
+        type: string
+#  schedule:
+#    - cron:  '15 22 * * *'
 jobs:
-  do-alert-dispatch:
+  hola-mundo-manual:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Alert - DISPATCH
-        run: echo "Esta es la alerta creada para identificar el DISPATCH"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir nombre
+        run: echo "USERNAME=${{ inputs.nombre }}" >> $GITHUB_ENV
+      - name: Definir lenguaje
+        run: echo "LANGUAGE=${{ inputs.lenguaje_favorito }}" >> $GITHUB_ENV
+      - name: Correr script
+        run: python hola_lenguaje.py
   do-alert-pr:
     if: ${{ github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
